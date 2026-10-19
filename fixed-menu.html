@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Menu | Jaiganesh Catering Services Coimbatore</title>
+  <meta name="description"
+    content="Explore our authentic catering menus including breakfast spreads, traditional lunch feasts, dinner specialties, snacks, and sweet desserts in Coimbatore.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Styling for the menu tabs page */
+    .menu-tabs-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .menu-tab {
+      background: var(--white);
+      color: var(--primary-dark);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 50px;
+      border: 2px solid var(--primary);
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 15px;
+      outline: none;
+    }
+
+    .menu-tab.active,
+    .menu-tab:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .menu-panel {
+      display: none;
+    }
+
+    .menu-panel.active {
+      display: block;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .menu-item-card {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .menu-item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .menu-item-card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+
+    .menu-item-card p {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    .menu-item-tag {
+      align-self: flex-start;
+      font-size: 11px;
+      background: var(--green-tint);
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header / Navbar -->
+  <header id="masthead">
+    <!-- Food image decorative - top right overflow -->
+    <img src="assets/images/home-page-image/hfh.png" alt="" class="header-food-img" aria-hidden="true">
+
+    <div class="container header-container">
+      <!-- Image logo matching official branding -->
+      <div class="site-logo">
+        <a href="index.html">
+          <img src="assets/images/home-page-image/IMG_4346-1024x306.png" alt="Jai Ganesh Catering Services Logo">
+        </a>
+      </div>
+
+      <div class="header-right">
+        <!-- Contact Pill -->
+        <div class="header-contact-pill">
+          <a href="tel:+919790640876">
+            <i class="fa-solid fa-phone"></i> 97906 40876
+          </a>
+          &nbsp;|&nbsp;
+          <a href="tel:+914222960876">
+            0422-2960876
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <ul class="main-header-menu">
+            <li class="menu-item"><a href="index.html">HOME</a></li>
+            <li class="menu-item"><a href="about.html">ABOUT</a></li>
+            <li class="menu-item menu-item-has-children"><a href="#">SERVICES</a>
+              <ul class="sub-menu">
+                <li><a href="wedding-catering.html">Wedding Catering</a></li>
+                <li><a href="corporate-catering.html">Corporate Catering</a></li>
+                <li><a href="mass-gathering.html">Mass Gathering</a></li>
+                <li><a href="food-fiesta.html">Food Fiesta</a></li>
+                <li><a href="barbeque-banquet.html">Barbeque Banquet</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="menu.html">MENU</a></li>
+            <li class="menu-item current-menu-item"><a href="fixed-menu.html">FIXED MENU</a></li>
+            <li class="menu-item"><a href="gallery.html">GALLERY</a></li>
+            <li class="menu-item"><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileOverlay" class="mobile-overlay"></div>
+  <div id="mobileNav" class="mobile-nav">
+    <div class="mobile-nav-header">
+      <img src="assets/images/home-page-image/IMG_4346-1024x306.png" alt="Jai Ganesh Logo">
+      <button id="mobileClose" class="mobile-nav-close" aria-label="Close Navigation">&times;</button>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="mobile-has-children">
+        <a href="#">Services</a>
+        <ul class="mobile-sub">
+          <li><a href="wedding-catering.html">Wedding Catering</a></li>
+          <li><a href="corporate-catering.html">Corporate Catering</a></li>
+          <li><a href="mass-gathering.html">Mass Gathering</a></li>
+          <li><a href="food-fiesta.html">Food Fiesta</a></li>
+          <li><a href="barbeque-banquet.html">Barbeque Banquet</a></li>
+        </ul>
+      </li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="fixed-menu.html">Fixed Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="mobile-nav-contact">
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+919790640876">9790640876</a>
+      |
+      <a href="tel:+914222960876">0422-2960876</a>
+    </div>
+
+  </div>
+
+  <!-- Fixed Menu Section -->
+  <section id="menu-tabs-section" style="background: var(--bg); padding: 60px 0;">
+
+    <div class="container menu-page-grid">
+      <div class="menu-left-col">
+        <h2 class="section-title cursive-title menu-page-title">Our Fixed Menu</h2>
+
+        <div class="menu-accordion">
+
+          <!-- BREAKFAST MENU 1 -->
+          <div class="accordion-item active">
+            <button class="accordion-header" data-target="breakfast-menu1">
+              <span>Breakfast Menu 1</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="breakfast-menu1" style="display: block;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Idly</li>
+                      <li>Pongal / Kichadi</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Mini Uttapam / Mini Masala Dosa <em>(Live Counter)</em></li>
+                      <li>Sevai / Upma with Curd / Idiyappam with Stew</li>
+                      <li>Sambar</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Coconut Chutney</li>
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Coffee / Badam Milk</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BREAKFAST MENU 2 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="breakfast-menu2">
+              <span>Breakfast Menu 2</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="breakfast-menu2" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Ulundu Vadai / Mysore Bonda</li>
+                      <li>Idly</li>
+                      <li>Pongal / Kichadi</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Mini Uttapam / Mini Masala Dosa <em>(Live Counter)</em></li>
+                      <li>Poori - Masal <em>(Live Counter)</em></li>
+                      <li>Sevai / Upma with Curd / Idiyappam with Stew</li>
+                      <li>Sambar</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Coconut Chutney</li>
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Coffee / Badam Milk</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BREAKFAST MENU 3 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="breakfast-menu3">
+              <span>Breakfast Menu 3</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="breakfast-menu3" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Ulundu Vadai / Mysore Bonda</li>
+                      <li>Idly</li>
+                      <li>Pongal / Kichadi</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Mini Uttapam / Mini Masala Dosa <em>(Live Counter)</em></li>
+                      <li>Poori - Masal <em>(Live Counter)</em></li>
+                      <li>Idiyappam with Coconut Milk</li>
+                      <li>Sevai / Upma with Curd</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sambar</li>
+                      <li>Coconut Chutney</li>
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Coffee / Badam Milk</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BREAKFAST MENU 4 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="breakfast-menu4">
+              <span>Breakfast Menu 4</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="breakfast-menu4" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Ulundu Vadai / Mysore Bonda</li>
+                      <li>Thattu Idly / Mini Sambar Idly / Rava Idly</li>
+                      <li>Pongal / Kichadi / Rava Pongal</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Mini Uthappam / Mini Masala Dosa</li>
+                      <li>Poori - Masal <em>(Live Counter)</em></li>
+                      <li>Sevai / Upma with Curd / Idiyappam with Stew</li>
+                      <li>Sambar</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Coconut Chutney</li>
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Coffee / Badam Milk</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LUNCH MENU 1 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="lunch-menu1">
+              <span>Lunch Menu 1</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="lunch-menu1" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Salt</li>
+                      <li>Rice</li>
+                      <li>Kadamba Sambar</li>
+                      <li>Puli Kuzhambu / Kara Kuzhambu</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Rasam</li>
+                      <li>Kootu</li>
+                      <li>Poriyal</li>
+                      <li>Appalam</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Paruppu Vadai</li>
+                      <li>Payasam</li>
+                      <li>Curd</li>
+                      <li>Pickle</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LUNCH MENU 2 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="lunch-menu2">
+              <span>Lunch Menu 2</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="lunch-menu2" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Salt</li>
+                      <li>Rice</li>
+                      <li>Kadamba Sambar</li>
+                      <li>Puli Kuzhambu / Kara Kuzhambu</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Rasam</li>
+                      <li>Kootu</li>
+                      <li>Poriyal</li>
+                      <li>Appalam</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Paruppu Vadai</li>
+                      <li>Payasam</li>
+                      <li>Curd</li>
+                      <li>Pickle</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LUNCH MENU 3 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="lunch-menu3">
+              <span>Lunch Menu 3</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="lunch-menu3" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Salt</li>
+                      <li>Rice</li>
+                      <li>Paruppu Podi with Ghee</li>
+                      <li>Kadamba Sambar</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Puli Kuzhambu / Kara Kuzhambu</li>
+                      <li>Rasam</li>
+                      <li>Kootu</li>
+                      <li>Poriyal</li>
+                      <li>Appalam</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Paruppu Vadai</li>
+                      <li>Payasam</li>
+                      <li>Curd</li>
+                      <li>Pickle</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LUNCH MENU 4 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="lunch-menu4">
+              <span>Lunch Menu 4</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="lunch-menu4" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Salt</li>
+                      <li>Chapati <em>(1pc)</em></li>
+                      <li>Veg Gravy</li>
+                      <li>Rice</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Kadamba Sambar</li>
+                      <li>Puli Kuzhambu / Kara Kuzhambu</li>
+                      <li>Rasam</li>
+                      <li>Kootu</li>
+                      <li>Poriyal</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Appalam</li>
+                      <li>Paruppu Vadai</li>
+                      <li>Payasam</li>
+                      <li>Curd</li>
+                      <li>Pickle</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LUNCH MENU 5 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="lunch-menu5">
+              <span>Lunch Menu 5</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="lunch-menu5" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Salt</li>
+                      <li>Chapati <em>(1pc)</em></li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Ghee Rice</li>
+                      <li>Raita / Kuruma</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Rice</li>
+                      <li>Kadamba Sambar</li>
+                      <li>Puli Kuzhambu / Kara Kuzhambu</li>
+                      <li>Rasam</li>
+                      <li>Kootu</li>
+                      <li>Poriyal</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Appalam</li>
+                      <li>Paruppu Vadai</li>
+                      <li>Payasam</li>
+                      <li>Curd</li>
+                      <li>Pickle</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LUNCH MENU 6 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="lunch-menu6">
+              <span>Lunch Menu 6</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="lunch-menu6" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Salt</li>
+                      <li>Chapati <em>(1pc)</em></li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Ghee Rice</li>
+                      <li>Raita / Kuruma</li>
+                      <li>Rice</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Kadamba Sambar</li>
+                      <li>Puli Kuzhambu / Kara Kuzhambu</li>
+                      <li>Rasam</li>
+                      <li>Kootu</li>
+                      <li>Poriyal</li>
+                      <li>Appalam</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Paruppu Vadai</li>
+                      <li>Payasam</li>
+                      <li>Curd</li>
+                      <li>Pickle</li>
+                      <li>Ice Cream</li>
+                      <li>Beeda</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LUNCH MENU 7 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="lunch-menu7">
+              <span>Lunch Menu 7</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="lunch-menu7" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Salt</li>
+                      <li>Chilli Gobi / Chilli Babycorn / Veg Cutlet / Porial</li>
+                      <li>Chapati <em>(1pc)</em></li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Ghee Rice</li>
+                      <li>Raita / Kuruma</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Rice</li>
+                      <li>Kadamba Sambar</li>
+                      <li>Puli Kuzhambu / Kara Kuzhambu</li>
+                      <li>Rasam</li>
+                      <li>Kootu</li>
+                      <li>Poriyal</li>
+                      <li>Appalam</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Paruppu Vadai</li>
+                      <li>Payasam</li>
+                      <li>Curd</li>
+                      <li>Pickle</li>
+                      <li>Ice Cream</li>
+                      <li>Beeda</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DINNER MENU 1 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="dinner-menu1">
+              <span>Dinner Menu 1</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="dinner-menu1" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Cutlet / Chilli Gobi / Chilli Babycorn / Veg Spring Roll</li>
+                      <li>Tomato Sauce</li>
+                      <li>Roti / Naan / Chapati / Parotta</li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Pulao</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Raita</li>
+                      <li>Idly / Mini Pepper Idly</li>
+                      <li>Mini Uttapam / Mini Masala Dosa</li>
+                      <li>Sambar</li>
+                      <li>Coconut Chutney</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Curd Rice / Curd Semiya / Kambu Curd / Wheat Curd</li>
+                      <li>Pickle</li>
+                      <li>Ice Cream</li>
+                      <li>Beeda</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DINNER MENU 2 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="dinner-menu2">
+              <span>Dinner Menu 2</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="dinner-menu2" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet <em>(2 nos)</em></li>
+                      <li>Cutlet / Chilli Gobi / Chilli Babycorn / Veg Spring Roll</li>
+                      <li>Tomato Sauce</li>
+                      <li>Roti / Naan / Chapati / Parotta</li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Pulao</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Raita</li>
+                      <li>Idly / Mini Pepper Idly</li>
+                      <li>Variety Dosa <em>(3nos)</em></li>
+                      <li>Sambar</li>
+                      <li>Coconut Chutney</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Curd Rice / Curd Semiya / Kambu Curd / Wheat Curd</li>
+                      <li>Pickle</li>
+                      <li>Ice Cream</li>
+                      <li>Beeda</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DINNER MENU 3 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="dinner-menu3">
+              <span>Dinner Menu 3</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="dinner-menu3" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet</li>
+                      <li>Cutlet / Chilli Gobi / Chilli Babycorn / Veg Spring Roll</li>
+                      <li>Tomato Sauce</li>
+                      <li>Roti / Naan / Chapati / Parotta</li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Pulao</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Raita</li>
+                      <li>Idly / Mini Pepper Idly</li>
+                      <li>Variety Dosa <em>(3nos)</em></li>
+                      <li>Idiyappam with Stew</li>
+                      <li>Sambar</li>
+                      <li>Coconut Chutney</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Curd Rice / Curd Semiya / Kambu Curd / Wheat Curd</li>
+                      <li>Pickle</li>
+                      <li>Ice Cream</li>
+                      <li>Beeda</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DINNER MENU 4 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="dinner-menu4">
+              <span>Dinner Menu 4</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="dinner-menu4" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet <em>(2 nos)</em></li>
+                      <li>Cutlet / Chilli Gobi / Chilli Babycorn / Veg Spring Roll</li>
+                      <li>Tomato Sauce</li>
+                      <li>Roti / Naan / Chapati / Parotta</li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Pulao</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Raita</li>
+                      <li>Idly / Mini Pepper Idly</li>
+                      <li>Variety Dosa <em>(3nos)</em></li>
+                      <li>Idiyappam with Stew</li>
+                      <li>Sambar</li>
+                      <li>Coconut Chutney</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Curd Rice / Curd Semiya / Kambu Curd / Wheat Curd</li>
+                      <li>Pickle</li>
+                      <li>Ice Cream</li>
+                      <li>Beeda</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DINNER MENU 5 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="dinner-menu5">
+              <span>Dinner Menu 5</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="dinner-menu5" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet <em>(2 nos)</em></li>
+                      <li>Cutlet / Chilli Gobi / Chilli Babycorn / Veg Spring Roll <em>(Any 2)</em></li>
+                      <li>Tomato Sauce</li>
+                      <li>Roti / Naan / Chapati / Parotta</li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Pulao</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Raita</li>
+                      <li>Idly / Mini Pepper Idly</li>
+                      <li>Variety Dosa <em>(3nos)</em></li>
+                      <li>Idiyappam with Stew</li>
+                      <li>Sambar</li>
+                      <li>Coconut Chutney</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                      <li>Curd Rice / Curd Semiya / Kambu Curd / Wheat Curd</li>
+                      <li>Pickle</li>
+                      <li>Ice Cream</li>
+                      <li>Beeda</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DINNER MENU 6 -->
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="dinner-menu6">
+              <span>Dinner Menu 6</span>
+              <i class="fa-solid fa-chevron-circle-down icon"></i>
+            </button>
+            <div class="accordion-content" id="dinner-menu6" style="display: none;">
+              <div class="menu-layout-wrapper">
+                <div class="menu-category-grid">
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Sweet <em>(2 nos)</em></li>
+                      <li>Cutlet / Chilli Gobi / Chilli Babycorn / Veg Spring Roll <em>(Any 2)</em></li>
+                      <li>Roti / Naan / Chapati / Parotta</li>
+                      <li>Veg Gravy</li>
+                      <li>Veg Biryani / Mushroom Biryani / Pulao</li>
+                      <li>Raita</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Idly / Mini Pepper Idly</li>
+                      <li>Variety Dosa <em>(3nos)</em></li>
+                      <li>Idiyappam with Stew</li>
+                      <li>Sambar</li>
+                      <li>Coconut Chutney</li>
+                      <li>Kara Chutney / Malli Chutney / Pudina Chutney</li>
+                    </ul>
+                  </div>
+                  <div class="menu-subcategory">
+                    <ul class="menu-item-list">
+                      <li>Curd Rice / Curd Semiya / Kambu Curd / Wheat Curd</li>
+                      <li>Pickle</li>
+                      <li>Ice Cream</li>
+                      <li>Beeda</li>
+                      <li>Badam Milk / Sukku Paal / Coffee</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end accordion -->
+      </div><!-- end menu-left-col -->
+
+      <div class="menu-right-col">
+        <h3 class="sidebar-title">QUICK ENQUIRY</h3>
+        <div class="sidebar-form-container">
+          <form id="sidebarEnquiryForm" novalidate>
+            <div class="sidebar-form-field">
+              <input type="text" id="sidebarName" placeholder="First Name" maxlength="100">
+              <small class="sidebar-error"></small>
+            </div>
+            <div class="sidebar-form-field">
+              <input type="tel" id="sidebarPhone" placeholder="Mobile Number" maxlength="15">
+              <small class="sidebar-error"></small>
+            </div>
+            <div class="sidebar-form-field">
+              <input type="number" id="sidebarGuests" placeholder="No of Pax" min="1" max="100000" step="1">
+              <small class="sidebar-error"></small>
+            </div>
+            <div class="sidebar-form-field">
+              <input type="text" id="sidebarDate" placeholder="Date" onfocus="this.type='date'"
+                onblur="if(!this.value)this.type='text'">
+              <small class="sidebar-error"></small>
+            </div>
+            <div class="sidebar-form-field">
+              <select id="sidebarOccasion">
+                <option value="">Select Occasion</option>
+                <option value="Wedding Catering">Wedding Catering</option>
+                <option value="Corporate Catering">Corporate Catering</option>
+                <option value="Mass Catering">Mass Catering</option>
+                <option value="Food Fiesta">Food Fiesta</option>
+                <option value="Barbeque Banquet">Barbeque Banquet</option>
+              </select>
+              <small class="sidebar-error"></small>
+            </div>
+            <button type="submit" class="submit-btn-sidebar">SUBMIT</button>
+            <p id="sidebarFormSuccess" style="display:none;" role="status">
+              Opening WhatsApp with your enquiry...
+            </p>
+          </form>
+        </div>
+        <h3 class="sidebar-title mt-4">Our Services</h3>
+        <ul class="sidebar-services-list">
+          <li><svg class="list-icon" viewBox="0 0 24 24" width="22" height="22"
+              style="fill: #e2f6e5; stroke: #135008; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px;">
+              <circle cx="12" cy="12" r="2.5" fill="#135008" />
+              <path d="M12,9.5 C12.8,7.5 14,6 12,3.5 C10,6 11.2,7.5 12,9.5 Z" />
+              <path d="M12,14.5 C12.8,16.5 14,18 12,20.5 C10,18 11.2,16.5 12,14.5 Z" />
+              <path d="M9.5,12 C7.5,12.8 6,14 3.5,12 C6,10 7.5,11.2 9.5,12 Z" />
+              <path d="M14.5,12 C16.5,12.8 18,14 20.5,12 C18,10 16.5,11.2 14.5,12 Z" />
+              <path d="M10.2,10.2 C9,8.5 7.5,7.5 5.5,5.5 C7.5,7.5 8.5,9 10.2,10.2 Z" />
+              <path d="M13.8,13.8 C15,15.5 16.5,16.5 18.5,18.5 C16.5,16.5 15,15.5 13.8,13.8 Z" />
+              <path d="M10.2,13.8 C9,15.5 7.5,16.5 5.5,18.5 C7.5,16.5 8.5,15 10.2,13.8 Z" />
+              <path d="M13.8,10.2 C15,8.5 16.5,7.5 18.5,5.5 C16.5,7.5 15,9 13.8,10.2 Z" />
+            </svg>
+            <a href="wedding-catering.html" style="color: #1a1a1a;">Wedding Catering</a>
+          </li>
+          <li><svg class="list-icon" viewBox="0 0 24 24" width="22" height="22"
+              style="fill: #e2f6e5; stroke: #135008; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px;">
+              <circle cx="12" cy="12" r="2.5" fill="#135008" />
+              <path d="M12,9.5 C12.8,7.5 14,6 12,3.5 C10,6 11.2,7.5 12,9.5 Z" />
+              <path d="M12,14.5 C12.8,16.5 14,18 12,20.5 C10,18 11.2,16.5 12,14.5 Z" />
+              <path d="M9.5,12 C7.5,12.8 6,14 3.5,12 C6,10 7.5,11.2 9.5,12 Z" />
+              <path d="M14.5,12 C16.5,12.8 18,14 20.5,12 C18,10 16.5,11.2 14.5,12 Z" />
+              <path d="M10.2,10.2 C9,8.5 7.5,7.5 5.5,5.5 C7.5,7.5 8.5,9 10.2,10.2 Z" />
+              <path d="M13.8,13.8 C15,15.5 16.5,16.5 18.5,18.5 C16.5,16.5 15,15.5 13.8,13.8 Z" />
+              <path d="M10.2,13.8 C9,15.5 7.5,16.5 5.5,18.5 C7.5,16.5 8.5,15 10.2,13.8 Z" />
+              <path d="M13.8,10.2 C15,8.5 16.5,7.5 18.5,5.5 C16.5,7.5 15,9 13.8,10.2 Z" />
+            </svg>
+            <a href="corporate-catering.html" style="color: #1a1a1a;">Corporate Catering</a>
+          </li>
+          <li><svg class="list-icon" viewBox="0 0 24 24" width="22" height="22"
+              style="fill: #e2f6e5; stroke: #135008; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px;">
+              <circle cx="12" cy="12" r="2.5" fill="#135008" />
+              <path d="M12,9.5 C12.8,7.5 14,6 12,3.5 C10,6 11.2,7.5 12,9.5 Z" />
+              <path d="M12,14.5 C12.8,16.5 14,18 12,20.5 C10,18 11.2,16.5 12,14.5 Z" />
+              <path d="M9.5,12 C7.5,12.8 6,14 3.5,12 C6,10 7.5,11.2 9.5,12 Z" />
+              <path d="M14.5,12 C16.5,12.8 18,14 20.5,12 C18,10 16.5,11.2 14.5,12 Z" />
+              <path d="M10.2,10.2 C9,8.5 7.5,7.5 5.5,5.5 C7.5,7.5 8.5,9 10.2,10.2 Z" />
+              <path d="M13.8,13.8 C15,15.5 16.5,16.5 18.5,18.5 C16.5,16.5 15,15.5 13.8,13.8 Z" />
+              <path d="M10.2,13.8 C9,15.5 7.5,16.5 5.5,18.5 C7.5,16.5 8.5,15 10.2,13.8 Z" />
+              <path d="M13.8,10.2 C15,8.5 16.5,7.5 18.5,5.5 C16.5,7.5 15,9 13.8,10.2 Z" />
+            </svg>
+            <a href="mass-gathering.html" style="color: #1a1a1a;">Mass Gathering</a>
+          </li>
+          <li><svg class="list-icon" viewBox="0 0 24 24" width="22" height="22"
+              style="fill: #e2f6e5; stroke: #135008; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px;">
+              <circle cx="12" cy="12" r="2.5" fill="#135008" />
+              <path d="M12,9.5 C12.8,7.5 14,6 12,3.5 C10,6 11.2,7.5 12,9.5 Z" />
+              <path d="M12,14.5 C12.8,16.5 14,18 12,20.5 C10,18 11.2,16.5 12,14.5 Z" />
+              <path d="M9.5,12 C7.5,12.8 6,14 3.5,12 C6,10 7.5,11.2 9.5,12 Z" />
+              <path d="M14.5,12 C16.5,12.8 18,14 20.5,12 C18,10 16.5,11.2 14.5,12 Z" />
+              <path d="M10.2,10.2 C9,8.5 7.5,7.5 5.5,5.5 C7.5,7.5 8.5,9 10.2,10.2 Z" />
+              <path d="M13.8,13.8 C15,15.5 16.5,16.5 18.5,18.5 C16.5,16.5 15,15.5 13.8,13.8 Z" />
+              <path d="M10.2,13.8 C9,15.5 7.5,16.5 5.5,18.5 C7.5,16.5 8.5,15 10.2,13.8 Z" />
+              <path d="M13.8,10.2 C15,8.5 16.5,7.5 18.5,5.5 C16.5,7.5 15,9 13.8,10.2 Z" />
+            </svg>
+            <a href="food-fiesta.html" style="color: #1a1a1a;">Food Fiesta</a>
+          </li>
+          <li><svg class="list-icon" viewBox="0 0 24 24" width="22" height="22"
+              style="fill: #e2f6e5; stroke: #135008; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px;">
+              <circle cx="12" cy="12" r="2.5" fill="#135008" />
+              <path d="M12,9.5 C12.8,7.5 14,6 12,3.5 C10,6 11.2,7.5 12,9.5 Z" />
+              <path d="M12,14.5 C12.8,16.5 14,18 12,20.5 C10,18 11.2,16.5 12,14.5 Z" />
+              <path d="M9.5,12 C7.5,12.8 6,14 3.5,12 C6,10 7.5,11.2 9.5,12 Z" />
+              <path d="M14.5,12 C16.5,12.8 18,14 20.5,12 C18,10 16.5,11.2 14.5,12 Z" />
+              <path d="M10.2,10.2 C9,8.5 7.5,7.5 5.5,5.5 C7.5,7.5 8.5,9 10.2,10.2 Z" />
+              <path d="M13.8,13.8 C15,15.5 16.5,16.5 18.5,18.5 C16.5,16.5 15,15.5 13.8,13.8 Z" />
+              <path d="M10.2,13.8 C9,15.5 7.5,16.5 5.5,18.5 C7.5,16.5 8.5,15 10.2,13.8 Z" />
+              <path d="M13.8,10.2 C15,8.5 16.5,7.5 18.5,5.5 C16.5,7.5 15,9 13.8,10.2 Z" />
+            </svg>
+            <a href="barbeque-banquet.html" style="color: #1a1a1a;"> Barbeque Banquet or any event be it big
+              or small.</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-primary-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: About Us -->
+        <div class="footer-col">
+          <h2>About Us</h2>
+          <p>With chefs who can cook a wide range of authentic, traditional dishes from any chosen cuisine and
+            technology that brings menus to the click of your smartphones, Jai Ganesh Caterers has the winning
+            combination to keep your tummy happy.</p>
+          <a href="about.html" class="footer-readmore">Read More &gt;&gt;</a>
+        </div>
+
+        <!-- Column 2: Quick Links split -->
+        <div class="footer-col">
+          <h2>Quick Links</h2>
+          <div class="quick-links-split">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="fixed-menu.html">Fixed Menu</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <ul>
+              <li><a href="wedding-catering.html">Wedding Catering</a></li>
+              <li><a href="corporate-catering.html">Corporate Catering</a></li>
+              <li><a href="mass-gathering.html">Mass Gathering</a></li>
+              <li><a href="food-fiesta.html">Food Fiesta</a></li>
+              <li><a href="barbeque-banquet.html">Barbeque Banquet</a></li>
+              <li><a href="javascript:void(0);">Palate to Plate</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Address and Socials -->
+        <div class="footer-col">
+          <h2>Address</h2>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span> <span style="font-weight: 400;" class="number_font">5/3B </span> Narasipuram Road, Behind LD Bank,
+              Thondamuthur, Coimbatore -641109</span>
+          </div>
+          <div class="contact-item number_font">
+            <i class="fa-solid fa-phone"></i>
+            <span>+ 91 97906 40876 / 0422-2960876</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>jaiganeshcaterers@gmail.com</span>
+          </div>
+          <div class="footer-follow-row">
+            <span>Follow Us</span>
+            <div class="footer-socials">
+              <a href="https://www.facebook.com/profile.php?id=61552357344863" target="_blank" class="fb"
+                aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://instagram.com/jaiganesh_caterers?igshid=OGQ5ZDc2ODk2ZA==" class="ig" target="_blank"
+                aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Below Footer -->
+  <div class="site-below-footer">
+    <div class="container">
+      <div class="below-footer-inner">
+        <div class="copy">&copy; <span class="number_font">2023</span> | All rights reserved by
+          jaiganeshcateringservices | Developed by <a href="https://www.iqtechway.com">Iqtechway</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    /* Smooth Menu Accordion */
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const accordionItems = document.querySelectorAll('.accordion-item');
+
+      function openAccordion(item, content) {
+        item.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.style.opacity = '1';
+      }
+
+      function closeAccordion(item, content) {
+        item.classList.remove('active');
+        content.style.maxHeight = '0px';
+        content.style.opacity = '0';
+      }
+
+      accordionItems.forEach(function (item) {
+        const header = item.querySelector('.accordion-header');
+        const targetId = header.getAttribute('data-target');
+        const content = document.getElementById(targetId);
+
+        if (!content) return;
+
+        // Initialize accordion state
+        if (item.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+        } else {
+          content.style.maxHeight = '0px';
+          content.style.opacity = '0';
+        }
+
+        header.addEventListener('click', function () {
+          const isActive = item.classList.contains('active');
+
+          // Close all accordion items smoothly
+          accordionItems.forEach(function (otherItem) {
+            const otherHeader = otherItem.querySelector('.accordion-header');
+            const otherContent = document.getElementById(
+              otherHeader.getAttribute('data-target')
+            );
+
+            if (otherContent && otherItem !== item) {
+              closeAccordion(otherItem, otherContent);
+            }
+          });
+
+          // Toggle the selected accordion
+          if (isActive) {
+            closeAccordion(item, content);
+          } else {
+            openAccordion(item, content);
+          }
+        });
+      });
+
+      // Update the open accordion height if the window resizes
+      window.addEventListener('resize', function () {
+        document.querySelectorAll('.accordion-item.active').forEach(function (item) {
+          const header = item.querySelector('.accordion-header');
+          const content = document.getElementById(
+            header.getAttribute('data-target')
+          );
+
+          if (content) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        });
+      });
+
+    });
+  </script>
+  <script>
+    (function () {
+      var form = document.getElementById('sidebarEnquiryForm');
+
+      if (!form) return;
+
+      var nameInput = document.getElementById('sidebarName');
+      var phoneInput = document.getElementById('sidebarPhone');
+      var guestsInput = document.getElementById('sidebarGuests');
+      var dateInput = document.getElementById('sidebarDate');
+      var occasionInput = document.getElementById('sidebarOccasion');
+      var successMessage = document.getElementById('sidebarFormSuccess');
+
+      var fields = [
+        nameInput,
+        phoneInput,
+        guestsInput,
+        dateInput,
+        occasionInput
+      ];
+
+      var whatsappNumber = '919790640876';
+
+      function showError(input, message) {
+        var wrapper = input.closest('.sidebar-form-field');
+        wrapper.querySelector('.sidebar-error').textContent = message;
+
+        input.classList.add('input-error');
+        input.classList.remove('input-valid');
+        input.setAttribute('aria-invalid', 'true');
+      }
+
+      function clearError(input) {
+        var wrapper = input.closest('.sidebar-form-field');
+        wrapper.querySelector('.sidebar-error').textContent = '';
+
+        input.classList.remove('input-error');
+        input.classList.add('input-valid');
+        input.setAttribute('aria-invalid', 'false');
+      }
+
+      function validateField(input) {
+        var value = input.value.trim();
+
+        if (input === nameInput) {
+          if (!value) {
+            showError(input, 'Please enter your first name.');
+            return false;
+          }
+
+          if (value.length < 2) {
+            showError(input, 'Name must contain at least 2 characters.');
+            return false;
+          }
+
+          if (!/^[\p{L}\p{M}][\p{L}\p{M}\s.'-]*$/u.test(value)) {
+            showError(input, 'Please enter a valid name.');
+            return false;
+          }
+        }
+
+        if (input === phoneInput) {
+          var digits = value.replace(/\D/g, '');
+
+          if (!value) {
+            showError(input, 'Please enter your phone number.');
+            return false;
+          }
+
+          if (!/^[+\d\s().-]+$/.test(value) ||
+            digits.length < 7 || digits.length > 15) {
+            showError(input, 'Please enter a valid phone number (7–15 digits).');
+            return false;
+          }
+        }
+
+        if (input === guestsInput) {
+          var guests = Number(value);
+
+          if (!value) {
+            showError(input, 'Please enter the number of guests.');
+            return false;
+          }
+
+          if (!Number.isInteger(guests) || guests < 1 || guests > 100000) {
+            showError(input, 'Enter a whole number between 1 and 100000.');
+            return false;
+          }
+        }
+
+        if (input === dateInput) {
+          if (!value) {
+            showError(input, 'Please select your event date.');
+            return false;
+          }
+
+          var selectedDate = new Date(value + 'T00:00:00');
+          var today = new Date();
+          today.setHours(0, 0, 0, 0);
+
+          if (isNaN(selectedDate.getTime())) {
+            showError(input, 'Please select a valid date.');
+            return false;
+          }
+
+          if (selectedDate < today) {
+            showError(input, 'Event date cannot be in the past.');
+            return false;
+          }
+        }
+
+        if (input === occasionInput && !value) {
+          showError(input, 'Please select an occasion.');
+          return false;
+        }
+
+        clearError(input);
+        return true;
+      }
+
+      fields.forEach(function (input) {
+        input.addEventListener(
+          input.tagName === 'SELECT' ? 'change' : 'input',
+          function () {
+            validateField(input);
+          }
+        );
+
+        input.addEventListener('blur', function () {
+          validateField(input);
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var isValid = true;
+
+        fields.forEach(function (input) {
+          if (!validateField(input)) {
+            isValid = false;
+          }
+        });
+
+        if (!isValid) {
+          var firstInvalid = form.querySelector('.input-error');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        var dateParts = dateInput.value.split('-');
+        var formattedDate =
+          dateParts[2] + '/' + dateParts[1] + '/' + dateParts[0];
+
+        var message =
+          'Hello! I would like to enquire about your catering services.\n\n' +
+          '*Sidebar Enquiry Details*\n' +
+          'Name: ' + nameInput.value.trim() + '\n' +
+          'Phone: ' + phoneInput.value.trim() + '\n' +
+          'Number of Guests: ' + guestsInput.value + '\n' +
+          'Event Date: ' + formattedDate + '\n' +
+          'Occasion: ' + occasionInput.value + '\n\n' +
+          'Please contact me regarding this enquiry.';
+
+        var whatsappURL =
+          'https://wa.me/' + whatsappNumber +
+          '?text=' + encodeURIComponent(message);
+
+        if (successMessage) {
+          successMessage.style.display = 'block';
+        }
+
+        var whatsappWindow = window.open(whatsappURL, '_blank');
+
+        if (whatsappWindow) {
+          whatsappWindow.opener = null;
+        } else {
+          window.location.href = whatsappURL;
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>
