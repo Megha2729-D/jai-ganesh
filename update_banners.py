@@ -25,7 +25,7 @@ for f in html_files:
         css_body = re.sub(r'margin:\s*[^;]+;', '', css_body)
         
         # Add the new properties
-        new_props = "\n      height: 250px;\n      border-radius: 40px;\n      max-width: 1200px;\n      width: 100%;\n      margin: 40px auto 50px auto;\n"
+        new_props = "\n      height: 250px;\n      border-radius: 40px;\n      max-width: 1120px;\n      width: 100%;\n      margin: 40px auto 50px auto;\n"
         
         return match.group(1) + new_props + css_body + match.group(3)
 
