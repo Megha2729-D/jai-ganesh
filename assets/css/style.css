@@ -376,7 +376,7 @@ ul {
 }
 
 .mobile-nav-header {
-  background: #ffffff;
+  background: #FFFCE8;
   padding: 18px 20px;
   display: flex;
   align-items: center;
@@ -438,6 +438,10 @@ ul {
   color: #ffffff;
 }
 
+.mobile-sub li {
+  border-bottom: 1px solid #c4c4c4;
+}
+
 .mobile-nav ul li a:hover::after {
   color: #ffffff;
 }
@@ -445,7 +449,7 @@ ul {
 .mobile-nav .mobile-sub {
   padding-left: 0;
   display: none;
-  background: #f9f9f9;
+  background: #FFFCE8;
 }
 
 .mobile-nav .mobile-sub li a {
@@ -480,8 +484,9 @@ ul {
   gap: 10px;
 }
 
-.mobile-nav-contact i {
-  color: var(--primary);
+.mobile-nav-contact i,
+.mobile-nav-contact a {
+  color: var(--primary-dark);
 }
 
 .mobile-overlay {
