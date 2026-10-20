@@ -10,8 +10,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const overlay = document.getElementById('mobileOverlay');
   const closeBtn = document.getElementById('mobileClose');
 
-  function openMenu() { mobileNav && mobileNav.classList.add('open'); overlay && overlay.classList.add('active'); }
-  function closeMenu() { mobileNav && mobileNav.classList.remove('open'); overlay && overlay.classList.remove('active'); }
+
+  function openMenu() {
+    if (mobileNav) mobileNav.classList.add('open');
+    if (overlay) overlay.classList.add('active');
+
+    document.documentElement.style.overflowY = 'hidden';
+    document.body.style.overflowY = 'hidden';
+  }
+
+  function closeMenu() {
+    if (mobileNav) mobileNav.classList.remove('open');
+    if (overlay) overlay.classList.remove('active');
+
+    document.documentElement.style.overflowY = '';
+    document.body.style.overflowY = '';
+  }
 
   toggle && toggle.addEventListener('click', openMenu);
   closeBtn && closeBtn.addEventListener('click', closeMenu);

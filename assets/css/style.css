@@ -19,6 +19,11 @@
   --font-script: "Yesteryear", cursive;
 }
 
+html.menu-open,
+body.menu-open {
+  overflow: hidden !important;
+}
+
 /* ========== RESET ========== */
 *,
 *::before,
