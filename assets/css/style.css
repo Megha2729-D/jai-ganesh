@@ -438,6 +438,10 @@ ul {
   color: #ffffff;
 }
 
+.mobile-nav ul li a:hover::after {
+  color: #ffffff;
+}
+
 .mobile-nav .mobile-sub {
   padding-left: 0;
   display: none;
